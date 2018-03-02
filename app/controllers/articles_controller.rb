@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  
+
   http_basic_authenticate_with name: 'name', password: 'password', except: [:index, :show]
 
   def index
@@ -48,6 +48,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, :author_name, :state)
   end
 end

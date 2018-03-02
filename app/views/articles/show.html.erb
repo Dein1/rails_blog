@@ -7,6 +7,16 @@
   <strong>Text:</strong>
   <%= @article.text %>
 </p>
+
+<p>
+  <i>By:
+  <%= @article.author_name %></i>
+</p>
+
+<p>
+  <i>post status:
+  <%= @article.state %></i>
+</p>
  
 <h2>Comments</h2>
 <%= render @article.comments %>
