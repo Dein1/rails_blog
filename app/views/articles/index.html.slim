@@ -35,4 +35,10 @@ table
       td
         = link_to t(:destroy), article_path(article), method: :delete, data: { confirm: 'Are you sure?' }
   
+= simple_form_for @q, url: articles_path, html: { method: 'get' } do |f|
+  = f.label :title_cont
+  = f.search_field :title_cont
+  = f.select :state_cont, options_for_select([['Draft', 'draft'], ['Published', 'published']], @q.state_cont)
+  = f.submit
+
 = paginate @articles
