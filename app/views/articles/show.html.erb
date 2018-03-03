@@ -1,28 +1,28 @@
 <p>
-  <strong>Title:</strong>
+  <strong><%= t(:title) %>:</strong>
   <%= @article.title %>
 </p>
  
 <p>
-  <strong>Text:</strong>
+  <strong><%= t(:text) %>:</strong>
   <%= @article.text %>
 </p>
 
 <p>
-  <i>By:
+  <i><%= t(:author) %>
   <%= @article.author_name %></i>
 </p>
 
 <p>
-  <i>post status:
+  <i><%= t(:status) %>
   <%= @article.state %></i>
 </p>
  
-<h2>Comments</h2>
+<h2><%= t(:comments) %></h2>
 <%= render @article.comments %>
  
-<h2>Add a comment:</h2>
+<h2><%= t(:add_comment) %></h2>
 <%= render 'comments/form' %>
  
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<%= link_to t(:edit), edit_article_path(@article) %> |
+<%= link_to t(:back), articles_path %>

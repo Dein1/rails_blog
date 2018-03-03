@@ -1,15 +1,15 @@
 <p>
-  <strong>Commenter:</strong>
+  <strong><%= t(:commenter) %></strong>
   <%= comment.commenter %>
 </p>
  
 <p>
-  <strong>Comment:</strong>
+  <strong><%= t(:comment) %></strong>
   <%= comment.body %>
 </p>
 
 <p>
-  <%= link_to 'Destroy Comment', [comment.article, comment],
+  <%= link_to t(:destroy_comment), [comment.article, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
 </p>

@@ -15,25 +15,25 @@
   <% end %>
  
   <p>
-    <%= form.label :title %><br>
+    <%= form.label :title, t(:title) %><br>
     <%= form.text_field :title %>
   </p>
  
   <p>
-    <%= form.label :text %><br>
+    <%= form.label :text, t(:text) %><br>
     <%= form.text_area :text %>
   </p>
 
   <p>
-    <%= form.label :author_name %><br>
+    <%= form.label :author_name, t(:author) %><br>
     <%= form.text_field :author_name %>
   </p>
  
   <p>
-    <%= form.radio_button :state, 'draft' %>
-    <%= form.label :state, "Save to drafts" %>
-    <%= form.radio_button :state, 'published' %>
-    <%= form.label :state, "Publish" %>
+    <%= form.radio_button(:state, 'draft') %>
+    <%= form.label(:state_draft, t(:save_to_drafts)) %>
+    <%= form.radio_button(:state, 'published') %>
+    <%= form.label(:state_published, t(:publish)) %>
   </p>
 
   <p>
