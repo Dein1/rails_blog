@@ -3,5 +3,6 @@ class Article < ApplicationRecord
   validates :title, presence: true,
                     length: { minimum: 5 }
   validates :author_name, presence: true
-  validates :state, inclusion: { in: %w(draft published) }
+  validates :state, inclusion: { in: %w(draft published) },
+                    presence: true
 end
