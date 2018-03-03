@@ -1,10 +1,8 @@
 class ArticlesController < ApplicationController
 
-  http_basic_authenticate_with name: 'name', password: 'password', except: [:index, :show]
-
   def index
     @q = Article.ransack(params[:q])
-    @articles = @q.result(distinct: true)
+    @articles = @q.result(distinct: true).page(params[:page])
   end
 
   def show
