@@ -1,24 +1,9 @@
 ru:
-  hello: "Привет, мир!"
-  save_to_drafts: "Сохранить в черновики"
-  publish: "Опубликовать"
-  title: "Заголовок"
-  text: "Текст"
-  author: "Автор"
-  status: "Статус"
-  show: "Показать"
-  edit: "Редактировать"
-  destroy: "Удалить"
-  new_article: "Новая статья"
-  index_header: "Все статьи"
-  back: "Назад"
-  comments: "Комментарии"
-  commenter: "Комментатор"
-  comment: "Комментарий"
-  add_comment: "Добавить комментарий"
-  destroy_comment: "Удалить комментарий"
-
   helpers:
     submit:
       create: "Создать статью"
       update: "Обновить статью"
+
+  articles:
+    new:
+      title: "Новая заметка"
