@@ -31,3 +31,19 @@
 
 en:
   hello: "Hello world"
+  edit: "Edit!"
+  back: "Back"
+  articles:
+    index:
+      title: "My blog"
+      show: "Show"
+      destroy: "Destroy"
+    new:
+      title: "New article"
+    show:
+      title: "Title"
+      text: "Text"
+      author: "Author"
+      status: "Status"
+      comments: "Comments"
+      add_comment: "Add comment"

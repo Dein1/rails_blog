@@ -1,9 +1,0 @@
-ru:
-  helpers:
-    submit:
-      create: "Создать статью"
-      update: "Обновить статью"
-
-  articles:
-    new:
-      title: "Новая заметка"

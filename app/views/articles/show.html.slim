@@ -1,29 +1,29 @@
 p
   strong
-    = t(:title)
+    = t('.title')
     | : 
   = @article.title
 p
   strong
-    = t(:text)
+    = t('.text')
     | : 
   = @article.text
 p
   i
-    = t(:author)
+    = t('.author')
     | : 
     = @article.author_name
 p
   i
-    = t(:status)
+    = t('.status')
     | : 
     = @article.state
 h2
-  = t(:comments)
+  = t('.comments')
 = render @article.comments
 h2
-  = t(:add_comment)
+  = t('.add_comment')
 = render 'comments/form'
-= link_to t(:edit), edit_article_path(@article)
+= link_to t('edit'), edit_article_path(@article)
 |  | 
-= link_to t(:back), articles_path
+= link_to t('back'), articles_path

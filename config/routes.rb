@@ -2,13 +2,11 @@ Rails.application.routes.draw do
   resources :users
   get 'welcome/index'
 
-  #get '/:locale' => 'articles#index'
+  
+  resources :articles do
+    resources :comments
+  end
 
-  #scope "(/:locale)" do
-    resources :articles do
-      resources :comments
-    end
-  #end
 
 
   root 'welcome#index'
