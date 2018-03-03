@@ -34,6 +34,7 @@ gem 'jquery-rails'
 gem 'sprockets-rails'
 gem 'kaminari'
 gem 'ransack'
+gem 'simple_form'
 gem 'slim-rails'
 gem 'validates_email_format_of'
 
