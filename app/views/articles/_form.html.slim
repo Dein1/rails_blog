@@ -1,0 +1,28 @@
+= form_with model: @article, local: true do |form|
+  - if @article.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@article.errors.count, "error")
+        |  prohibited this article from being saved: 
+      ul
+        - @article.errors.full_messages.each do |msg|
+          li
+            = msg
+  p
+    = form.label :title, t(:title)
+    br
+    = form.text_field :title
+  p
+    = form.label :text, t(:text)
+    br
+    = form.text_area :text
+  p
+    = form.label :author_name, t(:author)
+    br
+    = form.text_field :author_name
+  p
+    = form.label :state
+    br
+    = select(:article, :state, [['Draft', 'draft'], ['Published', 'published']])
+  p
+    = form.submit
