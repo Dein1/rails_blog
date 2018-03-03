@@ -33,6 +33,7 @@ en:
   hello: "Hello world"
   edit: "Edit!"
   back: "Back"
+  comment: "Comment"
   articles:
     index:
       title: "My blog"
@@ -47,3 +48,10 @@ en:
       status: "Status"
       comments: "Comments"
       add_comment: "Add comment"
+  comments:
+    comment:
+      commenter: "Commenter"
+      destroy_comment: "Destroy comment"
+    form:
+      commenter: "Commenter"
+      text: "Text"

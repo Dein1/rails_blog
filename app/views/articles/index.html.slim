@@ -1,45 +1,46 @@
-h1
-  = t('.title')
+.container
+  h1
+    = t('.title')
 
-= link_to t('articles.new.title'), new_article_path
-br
-br
-table
-  tr
-    th
-      = sort_link(@q, :title)
-    th
-      = sort_link(@q, :text)
-    th
-      i
-        = sort_link(@q, :author)
-    th
-      i
-        = sort_link(@q, :status)
-    th[colspan="4"]
-  - @articles.each do |article|
+  = link_to t('articles.new.title'), new_article_path
+  br
+  br
+  table
     tr
-      td
-        = article.title
-      td
-        = article.text
-      td
+      th
+        = sort_link(@q, :title)
+      th
+        = sort_link(@q, :text)
+      th
         i
-          = article.author_name
-      td
+          = sort_link(@q, :author)
+      th
         i
-          = article.state
-      td
-        = link_to t('.show'), article_path(article)
-      td
-        = link_to t('edit'), edit_article_path(article)
-      td
-        = link_to t('.destroy'), article_path(article), method: :delete, data: { confirm: 'Are you sure?' }
-br  
-= simple_form_for @q, url: articles_path, html: { method: 'get' } do |f|
-  = f.search_field :title_cont
-  = f.select :state_cont, options_for_select([['Draft', 'draft'], ['Published', 'published']], @q.state_cont)
-  = f.submit
+          = sort_link(@q, :status)
+      th[colspan="4"]
+    - @articles.each do |article|
+      tr
+        td
+          = article.title
+        td
+          = article.text
+        td
+          i
+            = article.author_name
+        td
+          i
+            = article.state
+        td
+          = link_to t('.show'), article_path(article)
+        td
+          = link_to t('edit'), edit_article_path(article)
+        td
+          = link_to t('.destroy'), article_path(article), method: :delete, data: { confirm: 'Are you sure?' }
+  br  
+  = simple_form_for @q, url: articles_path, html: { method: 'get' } do |f|
+    = f.search_field :title_cont
+    = f.select :state_cont, options_for_select([['Draft', 'draft'], ['Published', 'published']], @q.state_cont)
+    = f.submit
 
-br
-= paginate @articles
+  br
+  = paginate @articles

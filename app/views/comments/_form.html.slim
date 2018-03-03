@@ -1,10 +1,10 @@
 = form_with(model: [ @article, @article.comments.build ]) do |form|
   p
-    = form.label :commenter, t(:commenter)
+    = form.label :commenter, t('.commenter')
     br
     = form.text_field :commenter
   p
-    = form.label :body, t(:text)
+    = form.label :body, t('.text')
     br
     = form.text_area :body
   p
