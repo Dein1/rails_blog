@@ -1,0 +1,17 @@
+h1
+  | Categories
+table
+  thead
+    tr
+      th
+        | Category name
+      th
+        | Slug
+      th[colspan="2"]
+  tbody
+    - @categories.each do |category|
+      tr
+        td
+          = category.name
+        td
+          = category.slug

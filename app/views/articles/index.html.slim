@@ -5,7 +5,8 @@
   = link_to t('articles.new.title'), new_article_path
   br
   br
-  table
+  table.table.my-1
+
     tr
       th
         = sort_link(@q, :title)
@@ -37,10 +38,10 @@
         td
           = link_to t('.destroy'), article_path(article), method: :delete, data: { confirm: 'Are you sure?' }
   br  
-  = simple_form_for @q, url: articles_path, html: { method: 'get' } do |f|
-    = f.search_field :title_cont
-    = f.select :state_cont, options_for_select([['Draft', 'draft'], ['Published', 'published']], @q.state_cont)
-    = f.submit
+  = simple_form_for @q, url: articles_path, html: { method: 'get', class: "form-inline" }, wrapper: :inline_form do |f|
+    = f.input :title_cont
+    = f.input :state_cont, collection: [%w(Draft draft), %w(Published published)], selected: 'draft'
+    = f.button :submit
 
   br
   = paginate @articles
