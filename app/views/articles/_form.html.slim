@@ -17,4 +17,5 @@
           = form.input :text, as: :text
           = form.input :author_name
           = form.input :state, as: :select, collection: ['draft', 'published'], selected: 'draft'
+          = form.association :category
           = form.button :submit

@@ -3,6 +3,7 @@ require 'test_helper'
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @category = article_categories(:one)
+    @cat_without_articles = article_categories(:two)
   end
 
   test 'should get index' do
@@ -38,7 +39,6 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update category' do
-    print category_url(@category)
     patch category_url(@category), params: {
       category: {
         name: @category.name,
@@ -49,7 +49,6 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should destroy category' do
-    @cat_without_articles = article_categories(:two)
     assert_difference('Article::Category.count', -1) do
       delete category_url(@cat_without_articles)
     end

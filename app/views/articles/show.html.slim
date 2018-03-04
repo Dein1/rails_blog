@@ -19,6 +19,10 @@
       = t('.status')
       | : 
       = @article.state
+  p
+    i
+      | Category: 
+      = @article.category.name
   h2
     = t('.comments')
   = render @article.comments

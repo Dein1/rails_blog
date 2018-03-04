@@ -18,6 +18,9 @@
       th
         i
           = sort_link(@q, :status)
+      th
+        i
+          = sort_link(@q, :category)
       th[colspan="4"]
     - @articles.each do |article|
       tr
@@ -31,6 +34,9 @@
         td
           i
             = article.state
+        td
+          i
+            = article.category.name
         td
           = link_to t('.show'), article_path(article)
         td
