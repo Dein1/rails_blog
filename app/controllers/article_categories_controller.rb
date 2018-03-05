@@ -44,6 +44,6 @@ class ArticleCategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:article_category).permit(:name, :slug)
+    params.require(:category).permit(:name, :slug)
   end
 end
