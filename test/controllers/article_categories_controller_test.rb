@@ -19,7 +19,7 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   test 'should create category' do
     assert_difference('Article::Category.count') do
       post article_categories_url, params: {
-        category: {
+        article_category: {
           name: @category.name,
           slug: @category.slug
         }
@@ -40,7 +40,7 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update category' do
     patch article_category_url(@category), params: {
-      category: {
+      article_category: {
         name: @category.name,
         slug: @category.slug
       }
