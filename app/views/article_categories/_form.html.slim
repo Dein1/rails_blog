@@ -1,0 +1,6 @@
+.container
+  p
+    = simple_form_for(@category, html: { class: 'form-horisontal' }) do |f|
+        = f.input :name
+        = f.input :slug
+        = f.button :submit, class: 'btn btn-primary'

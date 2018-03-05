@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class ArticleCategoriesController < ApplicationController
   def index
     @categories = Article::Category.all
   end
@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
     @category = Article::Category.new(category_params)
 
     if @category.save
-      redirect_to 'index'
+      redirect_to article_categories_path
     else
       render 'new'
     end
@@ -29,7 +29,7 @@ class CategoriesController < ApplicationController
     @category = Article::Category.find(params[:id])
 
     if @category.update(category_params)
-      redirect_to 'index'
+      redirect_to article_categories_path
     else
       render 'edit'
     end
@@ -38,12 +38,12 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Article::Category.find(params[:id])
     @category.destroy
-    redirect_to 'index'
+    redirect_to article_categories_path
   end
 
   private
 
   def category_params
-    params.require(:category).permit(:name, :slug)
+    params.require(:article_category).permit(:name, :slug)
   end
 end

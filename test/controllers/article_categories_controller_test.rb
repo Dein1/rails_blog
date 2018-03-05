@@ -7,18 +7,18 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get index' do
-    get categories_url
+    get article_categories_url
     assert_response :success
   end
 
   test 'should get new' do
-    get new_category_url
+    get new_article_category_url
     assert_response :success
   end
 
   test 'should create category' do
     assert_difference('Article::Category.count') do
-      post categories_url, params: {
+      post article_categories_url, params: {
         category: {
           name: @category.name,
           slug: @category.slug
@@ -29,17 +29,17 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should show category' do
-    get category_url(@category)
+    get article_category_url(@category)
     assert_response :success
   end
 
   test 'should get edit' do
-    get edit_category_url(@category)
+    get edit_article_category_url(@category)
     assert_response :success
   end
 
   test 'should update category' do
-    patch category_url(@category), params: {
+    patch article_category_url(@category), params: {
       category: {
         name: @category.name,
         slug: @category.slug
@@ -50,7 +50,7 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should destroy category' do
     assert_difference('Article::Category.count', -1) do
-      delete category_url(@cat_without_articles)
+      delete article_category_url(@cat_without_articles)
     end
     assert_response :redirect
   end
